@@ -1,6 +1,5 @@
 const glob = require('fast-glob');
 // const fs = require('fs').promises;
-const path = require('path');
 const fs = require('fs');
 const spawn = require('await-spawn');
 const archiver = require('archiver');
@@ -8,16 +7,8 @@ const archiver = require('archiver');
 const image = require('./image');
 
 const {
-  log, isWin, rm, checkIsFile,
+  log, isWin, rm, checkIsFile, getPathData,
 } = require('./utils');
-
-async function extractRar(archive, extractPath) {
-  return extractPath;
-}
-
-async function extractZip(archive, extractPath) {
-  return extractPath;
-}
 
 async function extract7z(archivePath, extractPath) {
   let sevenZip;
@@ -66,14 +57,6 @@ function zipDirectory(source, fullZipFilePath) {
     stream.on('close', () => resolve());
     archive.finalize();
   });
-}
-
-function getPathData(archivePath) {
-  return {
-    ext: path.extname(archivePath),
-    fileName: path.basename(archivePath, path.extname(archivePath)),
-    dir: path.dirname(archivePath),
-  };
 }
 
 function changeExtension(filePath, ext = 'cbz') {

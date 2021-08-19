@@ -11,34 +11,36 @@ async function convertToCBZBatchCLI(archivePath) {
     .catch((err) => log(err, 'error'));
   if (!(archives && archives.length)) {
     log(`No archive found at ${archivePath}`, 'error');
+    return;
   }
 
   archiver.convertToCBZBatch(archives)
     .then(() => log('Finished CBZ conversion', 'info'));
 }
 
-async function convertToSeriesCLI(archivePath) {
+async function convertToSeriesCLI(archivePath, config) {
   const archives = await archiver.getArchives(archivePath)
     .catch((err) => log(err, 'error'));
   if (!(archives && archives.length)) {
     log(`No archive found at ${archivePath}`, 'error');
+    return;
   }
 
-  series.convertToSeries(archives)
+  const identifiedSeries = await series.getSeries(archives);
+
+  series.moveIdentifiedSeriesToSeriesFolder(identifiedSeries, config.seriesFolder)
     .then(() => log('Finished series conversion', 'info'));
 }
 
 function parseCommands() {
   const argPath = argv._[0];
-  log(`Converting "${argPath}" to standardized path`);
-
   const cleanPath = getCleanPath(argPath);
-  log(`Converted to "${cleanPath}"`);
 
   if (argv.convertToCBZ) {
     convertToCBZBatchCLI(cleanPath);
   } else if (argv.convertToSeries) {
-    convertToSeriesCLI(cleanPath);
+    const seriesFolder = getCleanPath(argv.seriesFolder);
+    convertToSeriesCLI(cleanPath, { seriesFolder });
   } else {
     log('No command run', 'error');
   }

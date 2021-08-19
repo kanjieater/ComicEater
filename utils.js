@@ -18,6 +18,7 @@ function isWin() {
 }
 
 function getCleanPath(argPath) {
+  log(`Converting "${argPath}" to standardized path`);
   let normalPath = argPath.split('\\').join(path.posix.sep);
 
   // const noDriveLetter = normalPath.replace(new RegExp('^[a-zA-Z]:'), '')
@@ -30,6 +31,7 @@ function getCleanPath(argPath) {
     const wslPath = `/mnt/${undrivedPath.toLowerCase()}`;
     normalPath = wslPath;
   }
+  log(`Converted to "${normalPath}"`);
   return normalPath;
 }
 
@@ -48,10 +50,19 @@ async function checkIsFile(startPath) {
   return false;
 }
 
+function getPathData(archivePath) {
+  return {
+    ext: path.extname(archivePath),
+    fileName: path.basename(archivePath, path.extname(archivePath)),
+    dir: path.dirname(archivePath),
+  };
+}
+
 module.exports = {
   log,
   getCleanPath,
   isWin,
   rm,
   checkIsFile,
+  getPathData,
 };
