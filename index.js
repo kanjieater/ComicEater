@@ -1,4 +1,4 @@
-const { parseCommands } = require('./cli');
+const { parseCommands } = require('./lib/cli');
 
 function main() {
   parseCommands();
