@@ -50,7 +50,7 @@ Move CBZ's to Series folders and update their metadata.
 ## Set Metadata
 
 ### TODO
-1. File names w/ spaces breaks spawn
+1. ~~File names w/ spaces breaks spawn~~
 1. Save detailed file history
 1. Nested archives
 1. Better content cleanup
