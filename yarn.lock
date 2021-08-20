@@ -2642,6 +2642,16 @@ json5@^2.1.2, json5@^2.2.0:
   dependencies:
     minimist "^1.2.5"
 
+just-clone@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/just-clone/-/just-clone-3.2.1.tgz#7396be5790d33f0fa7e8a145d7983b986a8cee39"
+  integrity sha512-PFotEVrrzAnwuWTUOFquDShWrHnUnhxNrVs1VFqkNfnoH3Sn5XUlDOePYn2Vv5cN8xV2y69jf8qEoQHm7eoLnw==
+
+just-merge@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/just-merge/-/just-merge-1.2.0.tgz#6d0610898b76744ea5217c8c5715e30ba1891508"
+  integrity sha512-uAfTXu3OLHIa8HE2li+qxaXAPHT7Y6+pLncbxj+B5Ja3zGLRyJF+MCmVdjCK1XKFvKvcvJfLb1SYTRFSj/dTsw==
+
 kleur@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
