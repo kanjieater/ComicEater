@@ -890,13 +890,6 @@ asynckit@^0.4.0:
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
   integrity sha1-x57Zf380y48robyXkLzDZkdLS3k=
 
-await-spawn@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/await-spawn/-/await-spawn-4.0.2.tgz#d9de3c98bf5324a4d0599cb505f3185b89ed7875"
-  integrity sha512-GdADmeLJiMvGKJD3xWBcX40DMn07JNH1sqJYgYJZH7NTGJ3B1qDjKBKzxhhyR1hjIcnUGFUmE/+4D1HcHAJBAA==
-  dependencies:
-    bl "^4.0.3"
-
 babel-jest@^27.0.6:
   version "27.0.6"
   resolved "https://registry.yarnpkg.com/babel-jest/-/babel-jest-27.0.6.tgz#e99c6e0577da2655118e3608b68761a5a69bd0d8"
