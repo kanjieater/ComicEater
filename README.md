@@ -60,11 +60,13 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. ~~Saga orchestration~~
 1. ~~Save detailed file history~~
 1. Nested archives
+1. Configuration from file
 1. Better content cleanup
-1. Convert Image folders to CBZ
 1. Write ComicInfo.xml
 1. Automatic Series metadata
 1. Manual Series metadata
+1. Automate maintenance
+1. Convert Image folders to CBZ
 1. Scraper Series metadata
 1. Webp
 1. Record File hash drift events
