@@ -15,7 +15,6 @@
     "fast-glob": "^3.2.7",
     "gm": "^1.23.1",
     "just-clone": "^3.2.1",
-    "just-merge": "^1.2.0",
     "rimraf": "^3.0.2",
     "winston": "^3.3.3",
     "winston-daily-rotate-file": "^4.5.5",
