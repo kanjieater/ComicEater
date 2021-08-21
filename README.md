@@ -48,11 +48,17 @@ Move CBZ's to Series folders and update their metadata.
 1. ☐ Update `ComicEater.json` and `ComicInfo.xml` with available metadata in the archive
 
 ## Set Metadata
+## Description
+Inside the app there are 3 ways of thinking about meta data.
+1. Meta data about the archive itself (History)
+1. Meta data about the content (Series, Volume, etc.)
+1. Meta data about the pipelines progress (Context: Internal runtime info of the pipelines "saga" work)
+Only the Archive Meta Data & Content Meta Data get persisted to the archive. Though pieces of the Context Meta Data may be embedded inside of History in order to allow for "rollbacks".
 
 ### TODO
 1. ~~File names w/ spaces breaks spawn~~
 1. ~~Saga orchestration~~
-1. Save detailed file history
+1. ~~Save detailed file history~~
 1. Nested archives
 1. Better content cleanup
 1. Convert Image folders to CBZ
