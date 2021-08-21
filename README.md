@@ -14,7 +14,7 @@ A collection of utilities for comic book archive management
 #### Flow
 1. ☑ Get all archives at path
 1. ☐ Get all image folders in path
-1. ☑ Don't extract if targetted CBZ of the archives already exists
+1. ☑ Don't extract if targeted CBZ of the archives already exists
 1. ☑ Test that the archives are valid archives with `7z t`
 1. ☑ Extract archive in current directory
 1. ☐ Recursively check for nested archives, and apply each of the following steps to each archive.
@@ -32,7 +32,7 @@ A collection of utilities for comic book archive management
 ## Description
 Move CBZ's to Series folders and update their metadata.
 ### Template
-`yarn main "<archiveDir>" --converToSeries --seriesFolder "<rootSeriesFolder>"`
+`yarn main "<archiveDir>" --convertToSeries --seriesFolder "<rootSeriesFolder>"`
 ### Example
 `yarn main "W:\Comics\1 優先\6 キュー\優先\極東事変" --convertToSeries --seriesFolder "W:\Comics\1 優先\6 キュー\優先"`
 ### Option
@@ -51,6 +51,7 @@ Move CBZ's to Series folders and update their metadata.
 
 ### TODO
 1. ~~File names w/ spaces breaks spawn~~
+1. Saga orchestration
 1. Save detailed file history
 1. Nested archives
 1. Better content cleanup
