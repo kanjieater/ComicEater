@@ -51,7 +51,7 @@ Move CBZ's to Series folders and update their metadata.
 
 ### TODO
 1. ~~File names w/ spaces breaks spawn~~
-1. Saga orchestration
+1. ~~Saga orchestration~~
 1. Save detailed file history
 1. Nested archives
 1. Better content cleanup
