@@ -4,6 +4,7 @@
   },
   
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "javascript.preferences.importModuleSpecifier": "non-relative"
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "debug.node.autoAttach": "on"
   
 }
