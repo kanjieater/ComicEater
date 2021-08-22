@@ -25,7 +25,7 @@ A collection of utilities for comic book archive management
 1. ☑ Repack images
 1. ☐ If nested archives exist, flatten all nested archives in place of the original
 1. ☑ If there were no errors, remove the extracted working directory
-1. ☐ Update `ComicEater.json` with available metadata (history) in the archive
+1. ☑ Update `ComicEater.json` with available metadata (history) in the archive
 
 
 ## Convert to Series
