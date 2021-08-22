@@ -2710,6 +2710,11 @@ just-clone@^3.2.1:
   resolved "https://registry.yarnpkg.com/just-clone/-/just-clone-3.2.1.tgz#7396be5790d33f0fa7e8a145d7983b986a8cee39"
   integrity sha512-PFotEVrrzAnwuWTUOFquDShWrHnUnhxNrVs1VFqkNfnoH3Sn5XUlDOePYn2Vv5cN8xV2y69jf8qEoQHm7eoLnw==
 
+just-diff@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/just-diff/-/just-diff-3.1.1.tgz#d50c597c6fd4776495308c63bdee1b6839082647"
+  integrity sha512-sdMWKjRq8qWZEjDcVA6llnUT8RDEBIfOiGpYFPYa9u+2c39JCsejktSP7mj5eRid5EIvTzIpQ2kDOCw1Nq9BjQ==
+
 kleur@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/kleur/-/kleur-3.0.3.tgz#a79c9ecc86ee1ce3fa6206d1216c501f147fc07e"
