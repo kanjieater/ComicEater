@@ -60,6 +60,7 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. ~~Saga orchestration~~
 1. ~~Save detailed file history~~
 1. Nested archives
+1. Nested archive validation before deletion
 1. Nested Rar test failing
 1. Configuration from file
 1. Better content cleanup
