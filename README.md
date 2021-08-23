@@ -17,7 +17,7 @@ A collection of utilities for comic book archive management
 1. ☑ Don't extract if targeted CBZ of the archives already exists
 1. ☑ Test that the archives are valid archives with `7z t`
 1. ☑ Extract archive in current directory
-1. ☐ Recursively check for nested archives, and apply each of the following steps to each archive.
+1. ☑ Recursively check for nested archives, and apply each of the following steps to each archive.
 1. ☐ Validate that there are images present in extracted archives
 1. ☑ Validate that images are valid using ImageMagick by doing a transform to a 5x5 image - Currently requires writing them to a `/tmp/` directory that is automatically cleaned up after the test is run
 1. ☐ Remove archive distributer bloat per user config (links to tracker etc.)
@@ -59,7 +59,8 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. ~~File names w/ spaces breaks spawn~~
 1. ~~Saga orchestration~~
 1. ~~Save detailed file history~~
-1. Nested archives
+1. ~~Nested Archives~~
+1. Missing history after conversion -> sub folder
 1. Nested archive validation before deletion
 1. Nested Rar test failing
 1. Configuration from file
