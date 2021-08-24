@@ -2,7 +2,7 @@
 A collection of utilities for comic book archive management
 
 ## Install
-`sudo apt-get install p7zip imagemagick`
+`sudo apt-get install p7zip imagemagick unrar`
 
 ## Convert to CBZ (from Rar, Rar5, Zip, CBR, 7z)
 ### Template
@@ -30,7 +30,7 @@ A collection of utilities for comic book archive management
 
 ## Convert to Series
 ## Description
-Move CBZ's to Series folders and update their metadata.
+Move CBZ's to Series folders and update their metadata. Your archives must already be valid CBZs.
 ### Template
 `yarn main "<archiveDir>" --convertToSeries --seriesFolder "<rootSeriesFolder>"`
 ### Example
@@ -60,7 +60,7 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. ~~Saga orchestration~~
 1. ~~Save detailed file history~~
 1. ~~Nested Archives~~
-1. Nested Rar test failing
+1. ~~Nested Rar test failing~~
 1. Configuration from file
 1. Better content cleanup
 1. Write ComicInfo.xml

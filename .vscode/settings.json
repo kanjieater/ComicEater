@@ -1,10 +1,8 @@
 {
-  "eslint.options": {  
-    "configFile": "/mnt/a/code/comic-utils/.eslintrc.js" 
-  },
-  
+
+
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.preferences.importModuleSpecifier": "non-relative",
   "debug.node.autoAttach": "on"
-  
+
 }
