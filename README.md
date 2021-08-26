@@ -69,8 +69,10 @@ It convert archives from the `seriesFolders`'s `queueFolders` to CBZ's. Then con
 ### Option
 `--configFile`
 `--maintainCollection`
-### Example
+### Template
 `yarn main --configFile "<configFile>" --maintainCollection`
+### Example
+`yarn main --configFile "W:\Collection\ComicEater.test.yml" --maintainCollection -vvv`
 
 
 #### Flow
@@ -98,7 +100,7 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. ~~Save detailed file history~~
 1. ~~Nested Archives~~
 1. ~~Nested Rar test failing~~
-1. Configuration from file
+1. ~~Configuration from file~~
 1. Better content cleanup
 1. Write ComicInfo.xml
 1. Automatic Series metadata
