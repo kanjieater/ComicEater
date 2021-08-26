@@ -39,11 +39,12 @@ bower_components
 *.sublime-workspace
 
 # IDE - VSCode
-.vscode/*
+# .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+!.vscode/comic-utils.code-workspace
 
 # misc
 .sass-cache

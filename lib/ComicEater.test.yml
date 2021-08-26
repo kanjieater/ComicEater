@@ -1,0 +1,52 @@
+---
+seriesFolders:
+- root: W:\Collection\1 Series\
+  queueFolders:
+  - W:\Collection\Series Queue\
+  folderPatterns:
+  - "[{{authors}}]{{seriesName}}全{{totalVolumeNumber}}/**/*"
+  - "[{{authors}}]{{seriesName}}第{{volumeNumber}}巻/**/*"
+  filePatterns:
+  - "[{{authors}}]{{seriesName}}- 第{{volumeNumber}}*"
+  - "[{{authors}}]{{seriesName}}第{{volumeNumber}}*"
+  - "[{{authors}}]{{seriesName}} v{{volumeNumber}}"
+  outputNamingConvention: "{{root}}/{{seriesName}}/[{{authors}}] {{seriesName}}
+    - 第{{volumeNumber}}巻"
+
+- root: W:\Collection\2 雑誌\
+  queueFolders:
+  - W:\Collection\Magazine Queue\
+  namingConvention: "{{root}}/{{seriesName}} - {{seriesYear}}/{{seriesName}}
+    - {{seriesYear}}年{{issueNumber}}号"
+
+scanCron: 60
+
+defaults:
+  seriesFolders:
+    - root: W:\Collection\series\
+      folderPatterns:
+      - "**/*"
+      filePatterns:
+      - "{{seriesName}}/**/*"
+      - "{{seriesName}}"
+      outputNamingConvention: "{{root}}/{{seriesName}}/{{seriesName}}"
+
+  contentMetaData:
+    languageISO: ja
+    manga: YesAndRightToLeft
+
+  junkToFilter:
+  - DLraw.net-
+  - Cmczip.Com-
+  - (一般コミック)
+  - (一般コミック／雑誌)
+  volumeNumberFilters:
+  - v([0-9]*)
+  - "- 第([0-9]*)"
+  - 第([0-9]*)
+  - "([0-9]*)"
+  issueNumberFilters:
+  - v([0-9]*)
+  - "- 第([0-9]*)"
+  - 第([0-9]*)
+  - "([0-9]*)"
