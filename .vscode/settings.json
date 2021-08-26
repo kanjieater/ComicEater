@@ -3,6 +3,7 @@
 
   "javascript.updateImportsOnFileMove.enabled": "always",
   "javascript.preferences.importModuleSpecifier": "non-relative",
-  "debug.node.autoAttach": "on"
+  "debug.node.autoAttach": "on",
+  "jest.jestCommandLine": "/home/ke/.yarn/bin/jest"
 
 }

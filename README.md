@@ -101,6 +101,7 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. ~~Nested Archives~~
 1. ~~Nested Rar test failing~~
 1. ~~Configuration from file~~
+1. ~~String paths https://stackoverflow.com/questions/29182244/convert-a-string-to-a-template-string~~
 1. Better content cleanup
 1. Write ComicInfo.xml
 1. Automatic Series metadata
@@ -112,3 +113,4 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. Get a new cover image based on existing dimension / reverse image lookup
 1. Webp
 1. Record File hash drift events
+1. Detect missing volumes/issues

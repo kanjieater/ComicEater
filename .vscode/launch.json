@@ -1,0 +1,39 @@
+{
+  "configurations": [
+
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Launch ComicEater",
+      "skipFiles": [
+        "${workspaceRoot}/node_modules/**/*.js",
+        "<node_internals>/**/*.js"
+      ],
+      "program": "/home/ke/code/comic-utils/index.js",
+      "args": [
+        "--configFile",
+        "'W:\\Collection\\ComicEater.test.yml'",
+        "--maintainCollection"
+      ],
+      "__workspaceFolder": "/home/ke/code/comic-utils"
+    },
+    {
+      "type": "node",
+      "name": "vscode-jest-tests",
+      "request": "launch",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+      "disableOptimisticBPs": true,
+      "skipFiles": [
+        "${workspaceRoot}/node_modules/**/*.js",
+        "<node_internals>/**/*.js"
+      ],
+      "program": "/home/ke/.yarn/bin/jest",
+      "cwd": "${workspaceFolder}",
+      "args": [
+        "--runInBand",
+        "--watchAll=false"
+      ]
+    }
+  ]
+}
