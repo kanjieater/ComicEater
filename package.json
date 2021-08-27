@@ -19,6 +19,7 @@
     "just-clone": "^3.2.1",
     "just-diff": "^3.1.1",
     "rimraf": "^3.0.2",
+    "string.prototype.replaceall": "^1.0.5",
     "winston": "^3.3.3",
     "winston-daily-rotate-file": "^4.5.5",
     "yargs": "^17.1.1"
