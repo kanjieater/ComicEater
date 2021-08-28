@@ -102,8 +102,10 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. ~~Nested Rar test failing~~
 1. ~~Configuration from file~~
 1. ~~String paths https://stackoverflow.com/questions/29182244/convert-a-string-to-a-template-string~~
-1. Better content cleanup
+1. ~~Better content cleanup~~
 1. ~~Suggest naming~~
+1. Number padding
+1. Intelligent volume grab
 1. Write ComicInfo.xml
 1. Automatic Series metadata
 1. Get names from google organic search
