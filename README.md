@@ -102,10 +102,11 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. ~~Nested Rar test failing~~
 1. ~~Configuration from file~~
 1. ~~String paths https://stackoverflow.com/questions/29182244/convert-a-string-to-a-template-string~~
-1. ~~Better content cleanup~~
+1. Better content cleanup
 1. ~~Suggest naming~~
 1. Write ComicInfo.xml
 1. Automatic Series metadata
+1. Get names from google organic search
 1. Manual Series metadata
 1. Automate maintenance
 1. Convert Image folders to CBZ
@@ -113,5 +114,7 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. Get a new cover image
 1. Get a new cover image based on existing dimension / reverse image lookup
 1. Webp
+1. Default to original file name on conflict
+1. Nested image folders that are multivolume Yokoshimakensanwa
 1. Record File hash drift events
 1. Detect missing volumes/issues
