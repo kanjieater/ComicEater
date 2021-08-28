@@ -104,14 +104,14 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. ~~String paths https://stackoverflow.com/questions/29182244/convert-a-string-to-a-template-string~~
 1. ~~Better content cleanup~~
 1. ~~Suggest naming~~
-1. Number padding
-1. Intelligent volume grab
+1. ~~Number padding~~
 1. Write ComicInfo.xml
+1. Convert Image folders to CBZ
+1. Intelligent volume grab
 1. Automatic Series metadata
 1. Get names from google organic search
 1. Manual Series metadata
 1. Automate maintenance
-1. Convert Image folders to CBZ
 1. Scraper Series metadata
 1. Get a new cover image
 1. Get a new cover image based on existing dimension / reverse image lookup
