@@ -1,6 +1,6 @@
 ---
 seriesFolders:
-- root: W:\Collection\1 Series\
+- seriesRoot: W:\Collection\1 Series\
   queueFolders:
   - W:\Collection\Series Queue\
   folderPatterns:
@@ -10,26 +10,26 @@ seriesFolders:
   - "[{{authors}}]{{seriesName}}- 第{{volumeNumber}}*"
   - "[{{authors}}]{{seriesName}}第{{volumeNumber}}*"
   - "[{{authors}}]{{seriesName}} v{{volumeNumber}}"
-  outputNamingConvention: "{{root}}/{{seriesName}}/[{{authors}}] {{seriesName}}
+  outputNamingConventions: "{{seriesRoot}}/{{seriesName}}/[{{authors}}] {{seriesName}}
     - 第{{volumeNumber}}巻"
 
-- root: W:\Collection\2 雑誌\
+- seriesRoot: W:\Collection\2 雑誌\
   queueFolders:
   - W:\Collection\Magazine Queue\
-  namingConvention: "{{root}}/{{seriesName}} - {{seriesYear}}/{{seriesName}}
+  namingConvention: "{{seriesRoot}}/{{seriesName}} - {{seriesYear}}/{{seriesName}}
     - {{seriesYear}}年{{issueNumber}}号"
 
 scanCron: 60
 
 defaults:
   seriesFolders:
-    - root: W:\Collection\series\
+    - seriesRoot: W:\Collection\series\
       folderPatterns:
       - "**/*"
       filePatterns:
       - "{{seriesName}}/**/*"
       - "{{seriesName}}"
-      outputNamingConvention: "{{root}}/{{seriesName}}/{{seriesName}}"
+      outputNamingConventions: "{{seriesRoot}}/{{seriesName}}/{{seriesName}}"
 
   contentMetaData:
     languageISO: ja

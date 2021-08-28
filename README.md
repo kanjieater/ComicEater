@@ -55,9 +55,9 @@ Move the archive(s) at the path to the series folder based on their name. Infers
 #### Flow
 1. ☑ Get all archives at path
 1. ☐ Get any meta data available from the `ComicEater.json` file
-1. ☑ Infer each root level archives series from file if no existing metadata
+1. ☑ Infer each seriesRoot level archives series from file if no existing metadata
 1. ☐ Get metadata from remote sources
-1. ☑ Put archives in their root series folder according to `--seriesFolder`
+1. ☑ Put archives in their seriesRoot series folder according to `--seriesFolder`
 1. ☑ Name the series according to the available metadata
 1. ☐ Rename the archive according to the metadata and configuration rules
 1. ☐ Update `ComicEater.json` and `ComicInfo.xml` with available metadata in the archive
@@ -81,7 +81,7 @@ It convert archives from the `seriesFolders`'s `queueFolders` to CBZ's. Then con
 1. ☐ Use `folderPatterns` to gather meta data from the folder about the files
 1. ☐ Use the `filePatterns` to gather data about the files
 1. ☐ Search remote sources for any additional meta data
-1. ☐ Rename the archive according to the metadata and `comic.json`'s `outputNamingConvention`
+1. ☐ Rename the archive according to the metadata and `comic.json`'s `outputNamingConventions`
 1. ☐ Update `ComicEater.json` and `ComicInfo.xml` with available metadata in the archive
 
 
@@ -103,7 +103,7 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. ~~Configuration from file~~
 1. ~~String paths https://stackoverflow.com/questions/29182244/convert-a-string-to-a-template-string~~
 1. Better content cleanup
-1. Dry run naming preview
+1. ~~Suggest naming~~
 1. Write ComicInfo.xml
 1. Automatic Series metadata
 1. Manual Series metadata

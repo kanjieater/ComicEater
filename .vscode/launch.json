@@ -4,7 +4,7 @@
     {
       "type": "pwa-node",
       "request": "launch",
-      "name": "Launch ComicEater",
+      "name": "ComicEater maintainCollection",
       "skipFiles": [
         "${workspaceRoot}/node_modules/**/*.js",
         "<node_internals>/**/*.js"
@@ -14,6 +14,22 @@
         "--configFile",
         "'W:\\Collection\\ComicEater.test.yml'",
         "--maintainCollection"
+      ],
+      "__workspaceFolder": "/home/ke/code/comic-utils"
+    },
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "ComicEater suggestNaming",
+      "skipFiles": [
+        "${workspaceRoot}/node_modules/**/*.js",
+        "<node_internals>/**/*.js"
+      ],
+      "program": "/home/ke/code/comic-utils/index.js",
+      "args": [
+        "--configFile",
+        "'W:\\Collection\\ComicEater.test.yml'",
+        "--suggestNaming"
       ],
       "__workspaceFolder": "/home/ke/code/comic-utils"
     },
