@@ -15,7 +15,8 @@
         "'W:\\Collection\\ComicEater.test.yml'",
         "--maintainCollection"
       ],
-      "__workspaceFolder": "/home/ke/code/comic-utils"
+      "__workspaceFolder": "/home/ke/code/comic-utils",
+      "disableOptimisticBPs": true,
     },
     {
       "type": "pwa-node",
@@ -31,7 +32,8 @@
         "'W:\\Collection\\ComicEater.test.yml'",
         "--suggestNaming"
       ],
-      "__workspaceFolder": "/home/ke/code/comic-utils"
+      "__workspaceFolder": "/home/ke/code/comic-utils",
+      "disableOptimisticBPs": true,
     },
     {
       "type": "node",
@@ -49,7 +51,8 @@
       "args": [
         "--runInBand",
         "--watchAll=false"
-      ]
+      ],
+      
     }
   ]
 }

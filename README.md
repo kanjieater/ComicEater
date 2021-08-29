@@ -21,7 +21,6 @@ A collection of utilities for comic book archive management
 1. ☐ Validate that there are images present in extracted archives
 1. ☑ Validate that images are valid using ImageMagick by doing a transform to a 5x5 image - Currently requires writing them to a `/tmp/` directory that is automatically cleaned up after the test is run
 1. ☐ Remove archive distributer bloat per user config (links to tracker etc.)
-1. ☐ If `--convertToWebp`, convert all images to webp format (Investigate if this can replace the image validation step, and avoid writing to `/tmp` twice)
 1. ☑ Repack images
 1. ☑ If nested archives exist, flatten all nested archives in place of the original
 1. ☑ If there were no errors, remove the extracted working directory
@@ -78,8 +77,8 @@ It convert archives from the `seriesFolders`'s `queueFolders` to CBZ's. Then con
 #### Flow
 1. ☑ Get all archives at `queueFolders`
 1. ☐ Convert them to CBZ
-1. ☐ Use `folderPatterns` to gather meta data from the folder about the files
-1. ☐ Use the `filePatterns` to gather data about the files
+1. ☑ Use `folderPatterns` to gather meta data from the folder about the files
+1. ☑ Use the `filePatterns` to gather data about the files
 1. ☐ Search remote sources for any additional meta data
 1. ☐ Rename the archive according to the metadata and `comic.json`'s `outputNamingConventions`
 1. ☐ Update `ComicEater.json` and `ComicInfo.xml` with available metadata in the archive
@@ -105,15 +104,15 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. ~~Better content cleanup~~
 1. ~~Suggest naming~~
 1. ~~Number padding~~
-1. Prefer series name from volume: 鬼灯の冷徹
-1. Deeply nested: Yumegenji Tsurugi no Saimon
+1. ~~Ignore case of junk to filter~~
+1. ~~Prefer series name from series if native~~
+1. ~~Deeply nested folders with globbing~~
+1. Write ComicInfo.xml
 1. Handle Volume ranges
-1. Write to Komga
 1. Convert Image folders to CBZ
 1. Automate maintenance
 1. Vendor Series metadata
 1. If TotalVolumes matches folder count, extract to individual
-1. Write ComicInfo.xml
 
 1. Get names from google organic search
 1. Undo naming / folder move
@@ -128,3 +127,4 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. Interactive naming
 1. Webp
 1. Record File hash drift events
+1. Send API request to Komga
