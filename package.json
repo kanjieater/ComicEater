@@ -16,6 +16,7 @@
     "fast-glob": "^3.2.7",
     "gm": "^1.23.1",
     "js-yaml": "^4.1.0",
+    "js2xmlparser": "^4.0.1",
     "just-clone": "^3.2.1",
     "just-diff": "^3.1.1",
     "rimraf": "^3.0.2",
