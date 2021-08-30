@@ -4,49 +4,105 @@ seriesFolders:
   queueFolders:
   - W:\Collection\Series Queue\
   folderPatterns:
-  - "[{{authors}}]{{seriesName}}全{{totalVolumeNumber}}/**/*"
+  - "{{authors}} 「{{seriesName}} 全{{totalVolumes}}巻」/**/*"
+  - "[{{authors}}]{{seriesName}}全{{totalVolumes}}/**/*"
   - "[{{authors}}]{{seriesName}}第{{volumeNumber}}巻/**/*"
+  - "[{{authors}}] {{seriesName}}/**/*"
+  - "【{{authors}}】{{seriesName}}全{{totalVolumes}}/**/*"
+  - "【{{authors}}】{{seriesName}}第{{volumeNumber}}巻/**/*"
+  - "【{{authors}}】{{seriesName}}/**/*"
+  - "{{seriesName}} v{{volumeNumber}}/**/*"
+  - "{{seriesName}}/**/*"
   filePatterns:
-  - "[{{authors}}]{{seriesName}}- 第{{volumeNumber}}*"
-  - "[{{authors}}]{{seriesName}}第{{volumeNumber}}*"
+  - "{{authors}} 「{{seriesName}} 第{{volumeNumber}}巻」"
   - "[{{authors}}]{{seriesName}} v{{volumeNumber}}"
-  outputNamingConventions: "{{seriesRoot}}/{{seriesName}}/[{{authors}}] {{seriesName}}
-    - 第{{volumeNumber}}巻"
+  - "[{{authors}}]{{seriesName}} {{issueNumber}}話"
+  - "[{{authors}}]{{seriesName}}- 第{{volumeNumber}}"
+  - "[{{authors}}]{{seriesName}}第{{volumeNumber}}"
+  - "[{{authors}}] {{seriesName}} {{volumeNumber}}"
+  - "[{{authors}}] {{seriesName}}"
+  - "【{{authors}}】{{seriesName}} v{{volumeNumber}}"
+  - "【{{authors}}】{{seriesName}} {{issueNumber}}話"
+  - "【{{authors}}】{{seriesName}}- 第{{volumeNumber}}"
+  - "【{{authors}}】{{seriesName}}第{{volumeNumber}}"
+  - "【{{authors}}】 {{seriesName}} {{volumeNumber}}"
+  - "【{{authors}}】 {{seriesName}}"
+  - "{{seriesName}}- 第{{volumeNumber}}"
+  - "{{seriesName}}第{{volumeNumber}}"
+  - "{{seriesName}} v{{volumeNumber}}"
+  - "{{seriesName}} {{issueNumber}}話"
+  - "{{seriesName}} {{volumeNumber}}"
+  titleNamingConventions:
+  - "{{seriesName}} - 第{{volumeNumber}}巻"
+  outputNamingConventions:
+  - "{{seriesRoot}}{{seriesName}}/[{{authors}}] {{seriesName}} - 第{{volumeNumber}}巻"
+  - "{{seriesRoot}}{{seriesName}}/[{{authors}}] {{seriesName}} - 第{{issueNumber}}話"
+  - "{{seriesRoot}}{{seriesName}}/{{seriesName}} - 第{{volumeNumber}}巻"
+  - "{{seriesRoot}}{{seriesName}}/{{seriesName}} - 第{{issueNumber}}話"
 
 - seriesRoot: W:\Collection\2 雑誌\
   queueFolders:
   - W:\Collection\Magazine Queue\
-  namingConvention: "{{seriesRoot}}/{{seriesName}} - {{seriesYear}}/{{seriesName}}
+  folderPatterns:
+  - "{{seriesName}}/*-{{publishYear}}/*"
+  filePatterns:
+  - "[{{authors}}]{{seriesName}}- 第{{volumeNumber}}"
+  - "[{{authors}}]{{seriesName}}第{{volumeNumber}}"
+  - "[{{authors}}]{{seriesName}} v{{volumeNumber}}"
+  - "{{seriesName}}- 第{{volumeNumber}}"
+  - "{{seriesName}}第{{volumeNumber}}"
+  - "{{seriesName}} v{{volumeNumber}}"
+  - "{{seriesName}} {{volumeNumber}}"
+
+  outputNamingConventions:
+  - "{{seriesRoot}}{{seriesName}} - {{seriesYear}}/{{seriesName}}
     - {{seriesYear}}年{{issueNumber}}号"
 
 scanCron: 60
 
 defaults:
   seriesFolders:
-    - seriesRoot: W:\Collection\series\
-      folderPatterns:
-      - "**/*"
-      filePatterns:
-      - "{{seriesName}}/**/*"
+      titleNamingConventions:
       - "{{seriesName}}"
-      outputNamingConventions: "{{seriesRoot}}/{{seriesName}}/{{seriesName}}"
+      - "{{fileName}}"
+      outputNamingConventions:
+      - "{{seriesRoot}}{{seriesName}}/{{fileName}}"
+      - "{{seriesRoot}}{{fileName}}/{{fileName}}"
+
 
   contentMetaData:
     languageISO: ja
     manga: YesAndRightToLeft
 
+  filesToDelete:
+  - cmczip.com.url
+
   junkToFilter:
   - DLraw.net-
   - Cmczip.Com-
+  - "[aKraa]"
   - (一般コミック)
   - (一般コミック／雑誌)
-  volumeNumberFilters:
-  - v([0-9]*)
-  - "- 第([0-9]*)"
-  - 第([0-9]*)
-  - "([0-9]*)"
-  issueNumberFilters:
-  - v([0-9]*)
-  - "- 第([0-9]*)"
-  - 第([0-9]*)
-  - "([0-9]*)"
+  - 【一般コミック】
+  - 【コミック】
+  - "[ハルタ]"
+  - "[Novel]"
+  - "[Raw]"
+  - "[lq]"
+  - "[end]"
+  - " jp"
+  - "カラー版"
+  - "_"
+
+  issueNumberZeroPadding: 3
+  volumeNumberZeroPadding: 2
+  # volumeNumberFilters:
+  # - v([0-9]*)
+  # - "- 第([0-9]*)"
+  # - 第([0-9]*)
+  # - "([0-9]*)"
+  # issueNumberFilters:
+  # - v([0-9]*)
+  # - "- 第([0-9]*)"
+  # - 第([0-9]*)
+  # - "([0-9]*)"
