@@ -110,6 +110,7 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 
 1. ~~Write ComicInfo.xml~~
 1. ~~Remove junk from Image folders, names, content~~
+1. Clean CBZs
 
 1. Handle Volume ranges
 1. Convert Image folders to CBZ
