@@ -115,9 +115,11 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. ~~Handle Volume ranges~~
 
 1. If TotalVolumes matches folder count, extract to individual
+1. Nested image folders that are multivolume Yokoshimakensanwa
 1. Convert Image folders to CBZ
 1. Automate maintenance
 1. Vendor Series metadata
+1. Add tags
 
 1. Get names from google organic search
 1. Undo naming / folder move
@@ -127,7 +129,6 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. Get a new cover image
 1. Get a new cover image based on existing dimension / reverse image lookup
 1. Default to original file name on conflict
-1. Nested image folders that are multivolume Yokoshimakensanwa
 1. Detect missing volumes/issues
 1. Interactive naming
 1. Webp
