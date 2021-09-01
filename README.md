@@ -116,6 +116,7 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 
 1. If TotalVolumes matches folder count, extract to individual
 1. Nested image folders that are multivolume Yokoshimakensanwa
+1. Get metadata from archive contents
 1. Convert Image folders to CBZ
 1. Automate maintenance
 1. Vendor Series metadata
