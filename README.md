@@ -14,13 +14,14 @@ A collection of utilities for comic book archive management
 #### Flow
 1. ☑ Get all archives at path
 1. ☐ Get all image folders in path
-1. ☑ Don't extract if targeted CBZ of the archives already exists
 1. ☑ Test that the archives are valid archives with `7z t`
+1. ☐ Get `volumeRange` from `filePatterns` to infer if multiple volumes are present
 1. ☑ Extract archive in current directory
 1. ☑ Recursively check for nested archives, and apply each of the following steps to each archive.
+1. ☑ Remove archive distributer bloat per user config (links to tracker etc.)
 1. ☑ Validate that there are images present in extracted archives
 1. ☑ Validate that images are valid using ImageMagick by doing a transform to a 5x5 image - Currently requires writing them to a `/tmp/` directory that is automatically cleaned up after the test is run
-1. ☑ Remove archive distributer bloat per user config (links to tracker etc.)
+1. ☐ If multiple volumes are present, see if the parent of the image containing subfolder count matches, and if it does, consider each subfolder as a separate volume
 1. ☑ Repack images
 1. ☑ If nested archives exist, flatten all nested archives in place of the original
 1. ☑ If there were no errors, remove the extracted working directory
@@ -113,8 +114,8 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. ~~Clean CBZs~~
 1. ~~Handle Volume ranges~~
 
-1. Convert Image folders to CBZ
 1. If TotalVolumes matches folder count, extract to individual
+1. Convert Image folders to CBZ
 1. Automate maintenance
 1. Vendor Series metadata
 
