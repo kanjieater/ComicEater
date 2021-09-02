@@ -116,7 +116,7 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 
 1. ~~If TotalVolumes matches folder count, extract to individual~~
 1. ~~Nested image folders that are multivolume~~
-1. 邪剣さんはすぐブレる（１） file folder pattern
+1. ~~fix halfwidth fullwidth chars for file folder pattern~~
 1. ~~Get metadata from archive contents~~
 1. Convert Image folders to CBZ
 1. Automate maintenance
