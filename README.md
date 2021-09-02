@@ -21,7 +21,7 @@ A collection of utilities for comic book archive management
 1. ☑ Remove archive distributer bloat per user config (links to tracker etc.)
 1. ☑ Validate that there are images present in extracted archives
 1. ☑ Validate that images are valid using ImageMagick by doing a transform to a 5x5 image - Currently requires writing them to a `/tmp/` directory that is automatically cleaned up after the test is run
-1. ☐ If multiple volumes are present, see if the parent of the image containing subfolder count matches, and if it does, consider each subfolder as a separate volume
+1. ☑ If multiple volumes are present, see if the parent of the image containing subfolder count matches, and if it does, consider each subfolder as a separate volume
 1. ☑ Repack images
 1. ☑ If nested archives exist, flatten all nested archives in place of the original
 1. ☑ If there were no errors, remove the extracted working directory
