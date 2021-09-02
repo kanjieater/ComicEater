@@ -130,7 +130,6 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. Scraper Series metadata
 1. Get a new cover image
 1. Get a new cover image based on existing dimension / reverse image lookup
-1. Default to original file name on conflict
 1. Detect missing volumes/issues
 1. Interactive naming
 1. Webp
