@@ -119,12 +119,14 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. ~~fix halfwidth fullwidth chars for file folder pattern~~
 1. ~~Get metadata from archive contents~~
 1. ~~Convert Image folders to CBZ~~
-1. Fix deletion after extracting folders - doesn't delete the clean dir?
+1. ~~Fix deletion after extracting folders - doesn't delete the clean dir~~
+1. ~~Vendor Series metadata~~
 1. Automate maintenance
-1. Vendor Series metadata
+1. Unified Series calls data vendors once per series
 1. Add tags
 
 1. Trim white space
+1. Split double pages
 1. Get names from google organic search
 1. Undo naming / folder move
 1. Master Config Test. > x results
