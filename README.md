@@ -13,9 +13,9 @@ A collection of utilities for comic book archive management
 `--convertToCBZ`
 #### Flow
 1. ☑ Get all archives at path
-1. ☐ Get all image folders in path
+1. ☑ Get all image folders in path
 1. ☑ Test that the archives are valid archives with `7z t`
-1. ☐ Get `volumeRange` from `filePatterns` to infer if multiple volumes are present
+1. ☑ Get `volumeRange` from `filePatterns` to infer if multiple volumes are present
 1. ☑ Extract archive in current directory
 1. ☑ Recursively check for nested archives, and apply each of the following steps to each archive.
 1. ☑ Remove archive distributer bloat per user config (links to tracker etc.)
@@ -56,7 +56,7 @@ Move the archive(s) at the path to the series folder based on their name. Infers
 1. ☑ Get all archives at path
 1. ☑ Get any meta data available from the `ComicEater.json` file
 1. ☑ Infer each seriesRoot level archives series from file if no existing metadata
-1. ☐ Get metadata from remote sources
+1. ☑ Get metadata from remote sources
 1. ☑ Put archives in their seriesRoot series folder according to `--seriesFolder`
 1. ☑ Name the series according to the available metadata
 1. ☑ Rename the archive according to the metadata and configuration rules
@@ -80,7 +80,7 @@ It convert archives from the `seriesFolders`'s `queueFolders` to CBZ's. Then con
 1. ☑ Convert them to CBZ
 1. ☑ Use `folderPatterns` to gather meta data from the folder about the files
 1. ☑ Use the `filePatterns` to gather data about the files
-1. ☐ Search remote sources for any additional meta data
+1. ☑ Search remote sources for any additional meta data
 1. ☑ Rename the archive according to the metadata and `comic.json`'s `outputNamingConventions`
 1. ☑ Update `ComicEater.json` and `ComicInfo.xml` with available metadata in the archive
 
@@ -123,9 +123,12 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. ~~Vendor Series metadata~~
 1. ~~Automate maintenance~~
 1. ~~Unified Series calls data vendors once per series~~
-1. Add tags
-
+1. Add magazines
+1. Start importing clean series
 1. Trim white space
+1. Waifu2x
+
+1. Add tags
 1. Split double pages
 1. Get names from google organic search
 1. Undo naming / folder move
