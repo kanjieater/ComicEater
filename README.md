@@ -123,6 +123,13 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. ~~Vendor Series metadata~~
 1. ~~Automate maintenance~~
 1. ~~Unified Series calls data vendors once per series~~
+
+1. ~~Cleanup regression~~
+1. ~~invalid images still being zipped~~
+1. Stopped on moving series
+1. Stat error not killing it on 7z -t
+
+
 1. Add magazines
 1. Start importing clean series
 1. Trim white space
