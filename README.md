@@ -135,8 +135,8 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 
 1. ~~volume range with archives takes second as a batch, but then deletes the first, and leaves the rest as dupes~~
 1. ~~Archive with multiple folder volumes failed: Brave Story, not cleaned up but made. Ran on individual volumes, and each was a separate series~~
-1. didn't clean up soil 9 & 10
-1. Shuto Heru v13-14
+1. ~~didn't clean up soil 9 & 10~~
+1. ~~Shuto Heru v13-14~~
 
 1. Add magazines
 1. Trim white space
