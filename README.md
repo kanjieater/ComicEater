@@ -57,9 +57,10 @@ Move the archive(s) at the path to the series folder based on their name. Infers
 1. ☑ Get any meta data available from the `ComicEater.json` file
 1. ☑ Infer each seriesRoot level archives series from file if no existing metadata
 1. ☑ Get metadata from remote sources
-1. ☑ Put archives in their seriesRoot series folder according to `--seriesFolder`
 1. ☑ Name the series according to the available metadata
+1. ☑ Put archives in their seriesRoot series folder according to the config
 1. ☑ Rename the archive according to the metadata and configuration rules
+1. ☑ Download images for each volume and place in the series folder
 1. ☑ Update `ComicEater.json` and `ComicInfo.xml` with available metadata in the archive
 
 #### Maintain Collection
@@ -140,7 +141,8 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. ~~keep the range if it wasn't split~~
 1. ~~Handle hakuneko folders~~
 
-1. Add magazines
+1. ~~Add magazines~~
+1. Download book covers
 1. Trim white space
 1. Waifu2x
 
