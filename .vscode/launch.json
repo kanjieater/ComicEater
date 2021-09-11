@@ -13,7 +13,8 @@
       "args": [
         "--configFile",
         "'W:\\Collection\\ComicEater.test.yml'",
-        "--maintainCollection"
+        "--maintainCollection",
+        "--offline"
       ],
       "__workspaceFolder": "/home/ke/code/comic-utils",
       "disableOptimisticBPs": true,
@@ -52,7 +53,7 @@
         "--runInBand",
         "--watchAll=false"
       ],
-      
+
     }
   ]
 }
