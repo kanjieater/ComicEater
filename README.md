@@ -3,6 +3,9 @@ A collection of utilities for comic book archive management
 
 ## Install
 `sudo apt-get install p7zip imagemagick unrar`
+Puppeteer is also a requirement. Your system may require additional dependencies. On Ubuntu 20.04 i had to install these:
+`sudo apt install -y libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxi-dev libxtst-dev libnss3 libcups2 libxss1 libxrandr2 libasound2 libatk1.0-0 libatk-bridge2.0-0 libpangocairo-1.0-0 libgtk-3-0 libgbm1`
+
 
 ## Convert to CBZ (from Rar, Rar5, Zip, CBR, 7z)
 ### Template
