@@ -94,6 +94,8 @@ It convert archives from the `seriesFolders`'s `queueFolders` to CBZ's. Then con
 Downloads covers for each volume and places it in the series
 ## Option
 `--downloadCover` Expects a path
+`--coverQuery "site:bookmeter.com 血界戦線 -Back"`
+`--noCoverValidate`
 ### Example
 `yarn main -vv --configFile 'W:\Collection\ComicEater.yml' --getCovers --downloadCover "W:\Collection\シリーズ"`
 
