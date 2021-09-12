@@ -89,6 +89,13 @@ It convert archives from the `seriesFolders`'s `queueFolders` to CBZ's. Then con
 1. ☑ Rename the archive according to the metadata and `comic.json`'s `outputNamingConventions`
 1. ☑ Update `ComicEater.json` and `ComicInfo.xml` with available metadata in the archive
 
+#### Download Covers
+## Description
+Downloads covers for each volume and places it in the series
+## Option
+`--downloadCover` Expects a path
+### Example
+`yarn main -vv --configFile 'W:\Collection\ComicEater.yml' --getCovers --downloadCover "W:\Collection\シリーズ"`
 
 
 ## Set Metadata
