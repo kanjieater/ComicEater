@@ -25,9 +25,9 @@ Puppeteer is also a requirement. Your system may require additional dependencies
 1. ☑ Validate that there are images present in extracted archives
 1. ☑ Validate that images are valid using ImageMagick by doing a transform to a 5x5 image - Currently requires writing them to a `/tmp/` directory that is automatically cleaned up after the test is run
 1. ☑ If multiple volumes are present, see if the parent of the image containing subfolder count matches, and if it does, consider each subfolder as a separate volume
-1. If `--trimWhiteSpace` is present, run trim through imagemagick
+1. ☑ If `--trimWhiteSpace` is present, run trim through imagemagick
 1. If `--upscale` is present, run the content through waifu2x (only tested on single volumes)
-1. If `--splitPages` is present, cut each page into two
+1. ☑ If `--splitPages` is present, cut each page into two
 1. ☑ Repack images
 1. ☑ If nested archives exist, flatten all nested archives in place of the original
 1. ☑ If there were no errors, remove the extracted working directory
@@ -163,9 +163,9 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 
 1. ~~Add magazines~~
 1. ~~Download book covers~~
-1. Trim white space
+1. ~~Trim white space~~
+1. ~~Split Double Images~~
 1. Waifu2x
-1. Split Double Images
 
 1. Add tags
 1. Split double pages
