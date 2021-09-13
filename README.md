@@ -99,6 +99,11 @@ Downloads covers for each volume and places it in the series
 ### Example
 `yarn main -vv --configFile 'W:\Collection\ComicEater.yml' --getCovers --downloadCover "W:\Collection\シリーズ"`
 
+#### Upscale
+## Description
+Runs this command:
+`waifu2x-ncnn-vulkan.exe -i "W:\\Collection\\シリーズ\\バナナフィッシュ\\[吉田秋生] バナナフィッシュ - 第01巻\\BANANA FISH 01\\" -o "W:\\Collection\\output1\\" -n 2 -s 2`
+
 
 ## Set Metadata
 ## Description
@@ -154,9 +159,10 @@ Only the Archive Meta Data & Content Meta Data get persisted to the archive. Tho
 1. ~~Handle hakuneko folders~~
 
 1. ~~Add magazines~~
-1. Download book covers
+1. ~~Download book covers~~
 1. Trim white space
 1. Waifu2x
+1. Split Double Images
 
 1. Add tags
 1. Split double pages
