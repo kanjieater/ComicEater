@@ -22,10 +22,14 @@ Including the following:
 - Moves failed conversions to a maintenance folder so you can manually fix and rerun any failed jobs
 - Records file history inside the archive as `ComicEater.json` to show what it was renamed from, split from, etc. and for future possibilities, like reverting changes
 
-## Support
+# Table of Contents
 
+* [Support](#support)
+* [Install](#install)
+* [Commands](#commands)
+* [Config](#config) 
 
-
+# Support
 
 If you're into this sort of thing, you might be interested in my podcast or the games I stream:
 
@@ -46,7 +50,7 @@ If you find my tools useful please consider supporting via Patreon.
 
 
 
-## Install
+# Install
 The apps current state requires both Windows and WSL.
 
 The app currently only supports being run from the source code, though I'm open to pull-requests to dockerize it or remove the windows dependency. All dependencies are WSL specific, but all paths are input as Windows paths for convenience.
@@ -69,7 +73,7 @@ Puppeteer is also an internal requirement for downloading cover images, so your 
 
 `sudo apt install -y libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxi-dev libxtst-dev libnss3 libcups2 libxss1 libxrandr2 libasound2 libatk1.0-0 libatk-bridge2.0-0 libpangocairo-1.0-0 libgtk-3-0 libgbm1`
 
-Customize your config file.
+Customize your config file. I highly recommend reading through the [#config] section and then downloading [my config](https://gist.github.com/kanjieater/e617a0f370edf25e0f947a25d67ba8ec), and adjust it as needed. This is the only part you should have to use your brain on ;).
 
 You can now run any of the commands below from WSL!
 
@@ -78,7 +82,8 @@ You can now run any of the commands below from WSL!
 - I recommend running the commands from `bash`, not `zsh`, as `zsh` can crash WSL when run for long periods with a lot of text output.
 - Make sure you have a backup of any archives you put in your queueFolders. I've run this with hundreds of archives now, so it does work well, but there could be bugs. I make no guarantees it will work well for you.
 
-## CLI Logging
+# Commands
+# CLI Logging
 You can use the `-v` command with any command to change the log level. Move v's is more verbose. I recommend running all commands with `-vv` to see `info` logging, so you can see how many succeeded and at what steps.
 
 Error's should always be logged.
@@ -228,11 +233,11 @@ Inside the app there are 3 ways of thinking about metadata.
 1. metadata about the pipelines progress (Context: Internal runtime info of the pipelines "saga" work)
 Only the Archive metadata & Content metadata get persisted to the archive. Though pieces of the Context metadata may be embedded inside of History in order to allow for "rollbacks".
 
-# Config File
+# Config
 ## Descriptions
-Every time you run a command you give the app a config file. I personally use one for automated things that I run on a nightly automated task (like converting weekly subscription magazines automatically), and a second config file for manual runs.
+Every time you run a command you give the app a `.yml` config file. I personally use one for automated things that I run on a nightly automated task (like converting weekly subscription magazines automatically), and a second config file for manual runs.
 
-There's a lot here, so the easiest way to understand it is to read this, then spend less than 10 mins, trying to understand my real config here. If you have difficulty still you can ask for help on discord.
+There's a lot here, so the easiest way to understand it is to read this, then spend less than 10 mins, trying to understand my real config [here](https://gist.github.com/kanjieater/e617a0f370edf25e0f947a25d67ba8ec). If you have difficulty still you can ask for help on discord.
 
 ## Patterns
 The pattern matching uses the double curly brace syntax `{{metaDataVariableName}}` as a way to indicate where metadata is at.
