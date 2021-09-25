@@ -27,6 +27,11 @@ Including the following:
 * [Support](#support)
 * [Install](#install)
 * [Commands](#commands)
+* [Maintain Collection](#maintain-collection) 
+* [Convert to Series](#convert-to-series) 
+* [Suggest Naming](#suggest-naming) 
+* [Download Covers](#download-covers) 
+* [Enhancement Options](#enhancement-options)  
 * [Config](#config) 
 
 # Support
@@ -145,7 +150,7 @@ Enhancement options are also valid.
 
 # Convert to Series
 ## Description
-Move CBZ's to Series folders and update their metadata. Your archives must already be valid CBZs.
+This is useful for when your archives have already been validated but you want to manually change a series title (maybe it downloaded the wrong one off Anilist). It moves CBZ's to Series folders and update their metadata based on local file and folder patterns. Your archives must already be valid CBZs.
 ### Option
 `--configFile`
 
@@ -168,6 +173,21 @@ Download Cover options are also valid.
 1. ☑ Rename the archive according to the metadata and configuration rules
 1. ☑ Download images for each volume and place in the series folder
 1. ☑ Update `ComicEater.json` and `ComicInfo.xml` with available metadata in the archive
+
+# Suggest Naming
+## Description
+This makes no changes to archives. This is useful for when you want to see what ComicEater would rename your archive to. Currently, it won't be able to predict how nested archives or volumes would be extracted.
+### Option
+`--configFile`
+
+`--convertToSeries`
+
+`--offline`
+
+Download Cover options are also valid.
+
+### Example
+`yarn main -vv --configFile 'W:\Collection\ComicEater.yml' --suggestNaming`
 
 # Download Covers
 ## Description
