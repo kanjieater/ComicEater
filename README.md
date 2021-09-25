@@ -1,6 +1,8 @@
 # ComicEater
 A collection of utilities for comic book archive management. Currently this is in alpha testing (AKA perfectly stable for me but YMMV).
 
+<img src="https://i.imgur.com/wUoSO0C.png" width="150"/>
+
 Including the following:
 - Supports Rar, Rar5, Zip, 7z, CBZ, CBR
 - Verify archives aren't corrupt using 7Zip
@@ -33,6 +35,42 @@ Including the following:
 * [Download Covers](#download-covers) 
 * [Enhancement Options](#enhancement-options)  
 * [Config](#config) 
+
+# Examples
+##Upscale before and after:
+
+<img src="https://i.imgur.com/xKXGaoD.jpg" width="200"> <img src="https://i.imgur.com/cIAFrjJ.png" width="400">
+
+For a more accurate comparison, open each image in a new tab and inspect carefully.
+
+##White space trim:
+
+<img src="https://i.imgur.com/hz3JYeC.jpg" width="400"> <img src="https://i.imgur.com/dQ8BXQD.jpg" width="400">
+
+##Double page split and white space trim:
+
+<img src="https://i.imgur.com/Lk0HvaC.jpg" width="400">
+
+It keeps the inner margin in tact, to indicate which page is the inner book binding. [Here](https://twitter.com/kanjieater/status/1299776511252353031)'s an inner book binding example I tweeted about.
+
+<img src="https://i.imgur.com/SLGLBOR.jpg" width="200">&nbsp;<img src="https://i.imgur.com/BI3tY8h.jpg" width="200">
+
+## Converts nested archives
+Original archive:
+<img src="https://i.imgur.com/asRv5B8.png" width="200">
+
+Split archive with downloaded covers:
+
+<img src="https://i.imgur.com/p9cYOza.png" width="800">
+
+Archives read as series in Komga now with metadata from AniList:
+
+<img src="https://i.imgur.com/890oOKx.png" width="800">
+
+Archives read as series in Tachiyomi now with Komga:
+
+<img src="https://i.imgur.com/lUEBDaM.jpg" width="400">
+
 
 # Support
 
@@ -243,7 +281,7 @@ Trims white space using GraphicsMagick's trim option. It uses a fuzz factor of `
 ### Option
 `--splitPages`
 
-Cut's pages in half. If Trim White Space option is included, it will wait until after the trim is done.
+Cut's pages in half. If Trim White Space option is included, it will wait until after the trim is done. Assumes right to left currently. 
 
 # Setting Metadata
 ## Description
