@@ -37,17 +37,17 @@ Including the following:
 * [Config](#config) 
 
 # Examples
-##Upscale before and after:
+## Upscale before and after:
 
 <img src="https://i.imgur.com/xKXGaoD.jpg" width="200"> <img src="https://i.imgur.com/cIAFrjJ.png" width="400">
 
 For a more accurate comparison, open each image in a new tab and inspect carefully.
 
-##White space trim:
+## White space trim:
 
 <img src="https://i.imgur.com/hz3JYeC.jpg" width="400"> <img src="https://i.imgur.com/dQ8BXQD.jpg" width="400">
 
-##Double page split and white space trim:
+## Double page split and white space trim:
 
 <img src="https://i.imgur.com/Lk0HvaC.jpg" width="400">
 
