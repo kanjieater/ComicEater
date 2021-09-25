@@ -1,21 +1,125 @@
-# ComicEater: comic-utils
-A collection of utilities for comic book archive management
+# ComicEater
+A collection of utilities for comic book archive management. Currently this is in alpha testing (AKA perfectly stable for me but YMMV).
+
+Including the following:
+- Supports Rar, Rar5, Zip, 7z, CBZ, CBR
+- Verify archives aren't corrupt using 7Zip
+- Verify images aren't corrupt using ImageMagick
+- Option to upscale comic books with machine learning to higher resolutions using waifu2x-ncnn-vulkan
+- Option to remove white space on margins
+- Option to split double pages into individual pages
+- Download metadata (from sources like AniList) for use in Komga (stored in a `ComicInfo.xml` )
+- Download covers for use Komga
+- Converts all of your archives to the standard CBZ, comic book zip format
+- Rename and group files according to downloaded metadata
+- Split nested archives into individual archives
+- Intelligently split archives based on volume count, eg a single archive named Jojo v1-3 could be split into 3 separate archives
+- Convert a folder of images into an archive - intelligently splitting them according to their volume number
+- Easy to understand pattern matching to standardize naming across your library
+- Conversion of archives into individual folders so they can be be recognized as a series in Komga
+- Removes distributer bloat, like url file links to their site
+- Supports a Queue folder that can be used to automatically convert archives on a chron job
+- Moves failed conversions to a maintenance folder so you can manually fix and rerun any failed jobs
+- Records file history inside the archive as `ComicEater.json` to show what it was renamed from, split from, etc. and for future possibilities, like reverting changes
+
+## Support
+
+
+
+
+If you're into this sort of thing, you might be interested in my podcast or the games I stream:
+
+<a href="https://www.youtube.com/channel/UCU1cAd9sJ4HeiBDsjnmifAQ"><img src="https://i.imgur.com/DLNKUcz.png" title="YouTube" width="50" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://twitter.com/kanjieater"><img src="https://i.imgur.com/KoLnQAl.png" title="twitter"  width="50" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://www.twitch.tv/kanjieater"><img src="https://i.imgur.com/sGLxgeo.png" title="twitch"  width="50" /></a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+You can get support here: [Discord](https://discord.com/channels/541310018931392512/541310018931392515)
+
+If you find my tools useful please consider supporting via Patreon.
+
+<a href="https://www.patreon.com/kanjieater" rel="nofollow"><img src="https://i.imgur.com/VCTLqLj.png"></a>
+
+
+
+
 
 ## Install
+The apps current state requires both Windows and WSL.
+
+The app currently only supports being run from the source code, though I'm open to pull-requests to dockerize it or remove the windows dependency. All dependencies are WSL specific, but all paths are input as Windows paths for convenience.
+
+The base functionality requires the following to be installed:
+
 `sudo apt-get install p7zip imagemagick unrar`
-Puppeteer is also a requirement. Your system may require additional dependencies. On Ubuntu 20.04 i had to install these:
+
+Also make sure the version of Node.js specified in the `.nvmrc ` (found in the project root) is installed. Currently this is `16.6.2`. I recommend using [nvm](https://github.com/nvm-sh/nvm).
+
+Install `yarn`:
+
+`npm install --global yarn`
+
+In the project root folder execute:
+
+`yarn`
+
+Puppeteer is also an internal requirement for downloading cover images, so your system may require additional dependencies. On Ubuntu 20.04 i had to install these:
+
 `sudo apt install -y libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxi-dev libxtst-dev libnss3 libcups2 libxss1 libxrandr2 libasound2 libatk1.0-0 libatk-bridge2.0-0 libpangocairo-1.0-0 libgtk-3-0 libgbm1`
 
+Customize your config file.
 
-## Convert to CBZ (from Rar, Rar5, Zip, CBR, 7z)
-### Template
-`yarn main --archiveDir "<archiveFile or archiveFolder>" --convertToCBZ`
-### Example
-`yarn main "W:\Comics\1 優先\6 キュー\優先\極東事変 第1巻.zip" --convertToCBZ"`
+You can now run any of the commands below from WSL!
+
+## Warning
+
+- I recommend running the commands from `bash`, not `zsh`, as `zsh` can crash WSL when run for long periods with a lot of text output.
+- Make sure you have a backup of any archives you put in your queueFolders. I've run this with hundreds of archives now, so it does work well, but there could be bugs. I make no guarantees it will work well for you.
+
+## CLI Logging
+You can use the `-v` command with any command to change the log level. Move v's is more verbose. I recommend running all commands with `-vv` to see `info` logging, so you can see how many succeeded and at what steps.
+
+Error's should always be logged.
+
+`-v`: Shows `WARN` level
+
+`-vv`: Shows `INFO` level
+
+`-vvv`: Shows `DEBUG` level
+
+# Maintain Collection
+## Description
+This is meant to be run as a service and will rerun based on `scanCron` in seconds.
+It convert archives from the `seriesFolders`'s `queueFolders` to CBZ's. Then converts them to series and updates their metadata.
 ### Option
-`--convertToCBZ`
-#### Flow
-1. ☑ Get all archives at path
+`--configFile`
+`--maintainCollection`
+`--offline`: Don't download metadata or use downloaded metadata for file renaming
+
+Download Cover options are also valid.
+
+Enhancement options are also valid.
+
+### Template
+`yarn main --configFile "<configFile>" --maintainCollection`
+### Example
+`yarn main -vv --configFile "W:\Collection\ComicEater.test.yml" --maintainCollection`
+
+
+### Flow
+1. ☑ Get all archives at `queueFolders`
+1. ☑ Convert them to CBZ (See the `Convert to CBZ Flow`)
+1. ☑ Use `folderPatterns` to gather metadata from the folder about the files
+1. ☑ Use the `filePatterns` to gather data about the files
+1. ☑ Search remote sources for any additional metadata
+1. ☑ Download Covers
+1. ☑ Rename the archive according to the metadata and `comic.json`'s `outputNamingConventions`
+1. ☑ Update `ComicEater.json` and `ComicInfo.xml` with available metadata in the archive
+
+#### Convert to CBZ Flow
+1. ☑ Get all archives from the path (if `maintainCollection`, this will be your queueFolders)
 1. ☑ Get all image folders in path
 1. ☑ Test that the archives are valid archives with `7z t`
 1. ☑ Get `volumeRange` from `filePatterns` to infer if multiple volumes are present
@@ -34,33 +138,24 @@ Puppeteer is also a requirement. Your system may require additional dependencies
 1. ☑ Update `ComicEater.json` with available metadata (history) in the archive
 
 
-## Convert to Series
+# Convert to Series
 ## Description
 Move CBZ's to Series folders and update their metadata. Your archives must already be valid CBZs.
 ### Option
-`--seriesFolder`
-
-`--archivePath`
+`--configFile`
 
 `--convertToSeries`
-### Template
-#### Single File TODO re-enable
-`yarn main --archivePath "<archiveFile or archiveFolder>" --convertToSeries --seriesFolder "<rootSeriesFolder>"`
 
-#### Optional
-`--seriesFolder "<rootSeriesFolder>"`
-Overrides the config file's first rootSeriesFolders. Only will put content into this folder.
+`--offline`
+
+Download Cover options are also valid.
+
 ### Example
+`yarn main -vv --configFile 'W:\Collection\ComicEater.yml' --convertToSeries`
 
-`--convertToSeries` Options
-
-Move the archive(s) at the path to the series folder based on their name. Infers series name from the archive name if it's in the base folder.
-
-`yarn main --archivePath "W:\Comics\1 優先\6 キュー\優先\極東事変" --convertToSeries --seriesFolder "W:\Comics\1 優先\6 キュー\優先"`
-
-#### Flow
-1. ☑ Get all archives at path
-1. ☑ Get any meta data available from the `ComicEater.json` file
+### Flow
+1. ☑ Get all archives at `queueFolders` path
+1. ☐ Get any metadata available from the `ComicEater.json` file
 1. ☑ Infer each seriesRoot level archives series from file if no existing metadata
 1. ☑ Get metadata from remote sources
 1. ☑ Name the series according to the available metadata
@@ -69,54 +164,133 @@ Move the archive(s) at the path to the series folder based on their name. Infers
 1. ☑ Download images for each volume and place in the series folder
 1. ☑ Update `ComicEater.json` and `ComicInfo.xml` with available metadata in the archive
 
-#### Maintain Collection
-## Description
-This is meant to be run as a service and will rerun based on `scanCron` in seconds.
-It convert archives from the `seriesFolders`'s `queueFolders` to CBZ's. Then converts them to series and updates their metadata.
-### Option
-`--configFile`
-`--maintainCollection`
-`--offline`
-### Template
-`yarn main --configFile "<configFile>" --maintainCollection`
-### Example
-`yarn main --configFile "W:\Collection\ComicEater.test.yml" --maintainCollection -vvv`
-
-
-#### Flow
-1. ☑ Get all archives at `queueFolders`
-1. ☑ Convert them to CBZ
-1. ☑ Use `folderPatterns` to gather meta data from the folder about the files
-1. ☑ Use the `filePatterns` to gather data about the files
-1. ☑ Search remote sources for any additional meta data
-1. ☑ Rename the archive according to the metadata and `comic.json`'s `outputNamingConventions`
-1. ☑ Update `ComicEater.json` and `ComicInfo.xml` with available metadata in the archive
-
-#### Download Covers
+# Download Covers
 ## Description
 Downloads covers for each volume and places it in the series
-## Option
-`--downloadCover` Expects a path
+### Option
+`--downloadCover` Expects a path. If none is given, then it will use the series path of each individual series in the job.
 `--coverQuery "site:bookmeter.com 血界戦線 -Back"`
+
+Sometimes it may download the wrong series image even with the validation. For instance the sequel to the manga `血界戦線`, is `血界戦線 back 2 back`. `血界戦線` is still in the name and considered valid. If you want to ignore the sequel you manually run `--coverQuery "site:bookmeter.com 血界戦線 -Back"`. Google will then exclude the sequels results containing `Back`.
+
 `--noCoverValidate`
+
+Sometimes the validation will fail if a manga is named something like BEASTARS, but google only found results containing ビースターズ. If you know the query will work, then you can use the `--noCoverValidate` to force the first image found in Google's results to be downloaded.
+
 ### Example
 `yarn main -vv --configFile 'W:\Collection\ComicEater.yml' --getCovers --downloadCover "W:\Collection\シリーズ"`
 
-#### Upscale
+
+### Flow
+1. ☑ Get all archives at `queueFolders` path
+1. ☑ Get metadata from online sources and local sources
+1. ☑ Query using `coverQuery`. This defaults to `<volumeNumber> <seriesName> <authors> site:bookmeter.com` (You can see this result for yourself on Google Images)
+1. ☑ If `--noCoverValidate` is not present, then validate that the cover's title on Google Images has the correct volume number and series name is present
+1. ☑ Downloads the cover to the `--downloadCover` path with the same name as the volume
+
+
+
+# Enhancement Options
+## Upscale
+### Option
+`--upscale`
+### Description
+Runs waifu2x on all images in the archive, and repacks then with their upscaled version. Currently supports `-n 2 -s 2`, a setting of 2 denoise level and 2x scale factor. See [here](https://github.com/nihui/waifu2x-ncnn-vulkan) for more details.
+### Setup
+Currently, upscaling relies on having `waifu2x-ncnn-vulkan.exe` on your path. You can get the most recent release from [here](https://github.com/nihui/waifu2x-ncnn-vulkan/releases).
+
+I recommend first trying that a command to waifu2x works, something like this:
+
+`waifu2x-ncnn-vulkan.exe -i "W:\\Collection\\SomeFolderWithImages" -o "W:\\Collection\\SomeOutputFolder\\" -n 2 -s 2`
+
+NOTE: This program will run as fast as your hardware. It's best if you can confirm it's using your GPU.
+
+If you can get this command working with `waifu2x-ncnn-vulkan.exe` on your path, the WSL app can call out to it.
+
+
+## Trim White Space
+### Option
+`--trimWhiteSpace`
+
+Trims white space using GraphicsMagick's trim option. It uses a fuzz factor of `10` so that border colors that are roughly the same color can be properly trimmed. See [here](http://www.graphicsmagick.org/GraphicsMagick.html#details-trim) for more details.
+
+## Split Double Pages
+### Option
+`--splitPages`
+
+Cut's pages in half. If Trim White Space option is included, it will wait until after the trim is done.
+
+# Setting Metadata
 ## Description
-Runs this command:
-`waifu2x-ncnn-vulkan.exe -i "W:\\Collection\\シリーズ\\バナナフィッシュ\\[吉田秋生] バナナフィッシュ - 第01巻\\BANANA FISH 01\\" -o "W:\\Collection\\output1\\" -n 2 -s 2`
+Inside the app there are 3 ways of thinking about metadata.
+1. metadata about the archive itself (History)
+1. metadata about the content (Series, Volume, etc.)
+1. metadata about the pipelines progress (Context: Internal runtime info of the pipelines "saga" work)
+Only the Archive metadata & Content metadata get persisted to the archive. Though pieces of the Context metadata may be embedded inside of History in order to allow for "rollbacks".
+
+# Config File
+## Descriptions
+Every time you run a command you give the app a config file. I personally use one for automated things that I run on a nightly automated task (like converting weekly subscription magazines automatically), and a second config file for manual runs.
+
+There's a lot here, so the easiest way to understand it is to read this, then spend less than 10 mins, trying to understand my real config here. If you have difficulty still you can ask for help on discord.
+
+## Patterns
+The pattern matching uses the double curly brace syntax `{{metaDataVariableName}}` as a way to indicate where metadata is at.
+The pattern matching also uses [glob](https://en.wikipedia.org/wiki/Glob_(programming))-like syntax to allow for subfolder matching. (I never use more than one folder level deep though personally). So something like `{{seriesName}}/**/*` matches the top level folder name as the `seriesName`, and no sub-folders would be used in the metadata.
+### Getting Metadata
+The `folderPatterns` and `filePatterns` use custom pattern matching to know how to infer metadata from your file names and folders. They use an ordered list, and will take the top pattern it can match with all variables in the pattern.
+So if you a file named `[Bob] MyManga v01`, and file patterns of
+- `"VerySpecifcPattern[{{authors}}] {{seriesName}} {{volumeNumber}}"`
+- `"[{{authors}}] {{seriesName}} v{{volumeNumber}}"`
+- `"{{seriesName}}"`
+It will automatically infer the author is Bob and the series name should be MyManga, and it contains the first volume.Since the top pattern would not match, it would ignore it (VerySpecificPattern wasn't found in the file name `[Bob] MyManga v01`). Since the `[]` of the `authors` pattern and the space before teh `seriesName` and the `v` of the `volumeNumber` were present it matched the second pattern.
+
+If instead the file had been named `Bob's standalone Manga`, it would match the third pattern, giving it a series name of `Bob's standalone Manga`. The author would not be inferred, and the volume number would also be unknown.
+
+### Outputting
+Based on the metadata picked up from the file & folder patterns, as well as the metadata gained from external sources like AniList, it will use the `outputNamingConventions` as a prioritized list of ways to name your files. It will not use a pattern unless ALL metadata variables were matched (besides `fileName`, which can be used as a default).
+
+- `"{{seriesRoot}}{{seriesName}}/[{{authors}}] {{seriesName}} - 第{{volumeRange}}巻"`
+- `"{{seriesRoot}}{{seriesName}}/[{{authors}}] {{seriesName}} - 第{{volumeNumber}}{{volumeVariant}}巻"`
+- `"{{seriesRoot}}{{fileName}}/{{fileName}}"`
+
+The first output pattern would match if `[Bob] MyManga v1-4` wasn't able to be automatically split, and therefore had a `volumeRange`.
+The second pattern would be matched if a volume had a single letter after it, as is common in manga distribution:
+`[Bob] MyManga v1e`, and would result in: `/YourSeriesRoot/MyManga/[Bob] MyManga - 第1e巻`.
+The last case would be a fallback to keeping whatever the files original name was, in case the other metadata variables couldn't be found.
+
+### Recognized Metadata variables
+#### Input and Output metadata Variables
+- `{{authors}}` : the default author will be assumed to be the writer in Komga metadata. They will be split by `splitAuthorsBy`, so `Bob・KanjiEater` could be split into two separate authors: Bob & Kanjieater.
+- `{{volumeNumber}}`: Runs it through various validation checks to assure it's actually a number, and also extracts a `volumeVariant`, which is at most one letter attached to the volume number. It can also recognize volume ranges, eg `c2-5`. Chapters and volumes are used without distinction currently.
+- `{{publishYear}}`: Any characters
+- `{{publishMonth}}`: Any characters
+- `{{publishDate}}`: Any characters
+#### Output only
+- `{{seriesRoot}}`: The folder from the `seriesRoot`
+- `{{fileName}}`: The original file name
+
+## Clean up
+- `filesToDeleteWithExtensions` will remove any files in the archive that have a matching file extension. (Common use case `someAwfulSite.url`)
+- `junkToFilter` will remove these patterns from your file names and folder names
+## Metadata
+You can set default metadata according to the accepted comicInfo.xml fields for komga in the `defaults`:
+  ```
+  defaults:
+    contentMetaData:
+      languageISO: ja
+      manga: YesAndRightToLeft
+  ```
+Setting your language to ja will assume you want Japanese text in file names, instead of an English translation.
 
 
-## Set Metadata
-## Description
-Inside the app there are 3 ways of thinking about meta data.
-1. Meta data about the archive itself (History)
-1. Meta data about the content (Series, Volume, etc.)
-1. Meta data about the pipelines progress (Context: Internal runtime info of the pipelines "saga" work)
-Only the Archive Meta Data & Content Meta Data get persisted to the archive. Though pieces of the Context Meta Data may be embedded inside of History in order to allow for "rollbacks".
+## Maintenance Folder
+- `maintenanceFolder`
 
-### TODO
+This is used when something goes wrong. All failed files are moved here.
+
+
+# Potential Future Features
 1. ~~File names w/ spaces breaks spawn~~
 1. ~~Saga orchestration~~
 1. ~~Save detailed file history~~
