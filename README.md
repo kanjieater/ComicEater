@@ -41,7 +41,7 @@ Including the following:
 
 <img src="https://i.imgur.com/xKXGaoD.jpg" width="200"> <img src="https://i.imgur.com/cIAFrjJ.png" width="400">
 
-For a more accurate comparison, open each image in a new tab and inspect carefully.
+For a more accurate comparison view [here](https://imgsli.com/NzQ1Njk).
 
 ## White space trim:
 
