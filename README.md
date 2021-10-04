@@ -83,7 +83,7 @@ If you're into this sort of thing, you might be interested in my podcast or the 
 <a href="https://www.twitch.tv/kanjieater"><img src="https://i.imgur.com/sGLxgeo.png" title="twitch"  width="50" /></a>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-You can get support here: [Discord](https://discord.com/channels/541310018931392512/541310018931392515)
+You can get support here: [Discord](https://discord.com/invite/agbwB4p)
 
 If you find my tools useful please consider supporting via Patreon.
 
