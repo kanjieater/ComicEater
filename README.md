@@ -1,6 +1,8 @@
 # ComicEater
 A collection of utilities for comic book archive management. Currently this is in alpha testing (AKA perfectly stable for me but YMMV).
 
+<img src="https://i.imgur.com/wUoSO0C.png" width="150"/>
+
 Including the following:
 - Supports Rar, Rar5, Zip, 7z, CBZ, CBR
 - Verify archives aren't corrupt using 7Zip
@@ -22,10 +24,55 @@ Including the following:
 - Moves failed conversions to a maintenance folder so you can manually fix and rerun any failed jobs
 - Records file history inside the archive as `ComicEater.json` to show what it was renamed from, split from, etc. and for future possibilities, like reverting changes
 
-## Support
+# Table of Contents
+
+* [Support](#support)
+* [Install](#install)
+* [Commands](#commands)
+* [Maintain Collection](#maintain-collection) 
+* [Convert to Series](#convert-to-series) 
+* [Suggest Naming](#suggest-naming) 
+* [Download Covers](#download-covers) 
+* [Enhancement Options](#enhancement-options)  
+* [Config](#config) 
+
+# Examples
+## Upscale before and after:
+
+<img src="https://i.imgur.com/xKXGaoD.jpg" width="200"> <img src="https://i.imgur.com/cIAFrjJ.png" width="400">
+
+For a more accurate comparison view [here](https://imgsli.com/NzQ1Njk).
+
+## White space trim:
+
+<img src="https://i.imgur.com/hz3JYeC.jpg" width="400"> <img src="https://i.imgur.com/dQ8BXQD.jpg" width="400">
+
+## Double page split and white space trim:
+
+<img src="https://i.imgur.com/Lk0HvaC.jpg" width="400">
+
+It keeps the inner margin in tact, to indicate which page is the inner book binding. [Here](https://twitter.com/kanjieater/status/1299776511252353031)'s an inner book binding example I tweeted about.
+
+<img src="https://i.imgur.com/SLGLBOR.jpg" width="200">&nbsp;<img src="https://i.imgur.com/BI3tY8h.jpg" width="200">
+
+## Converts nested archives
+Original archive:
+<img src="https://i.imgur.com/asRv5B8.png" width="200">
+
+Split archive with downloaded covers:
+
+<img src="https://i.imgur.com/p9cYOza.png" width="800">
+
+Archives read as series in Komga now with metadata from AniList:
+
+<img src="https://i.imgur.com/890oOKx.png" width="800">
+
+Archives read as series in Tachiyomi now with Komga:
+
+<img src="https://i.imgur.com/lUEBDaM.jpg" width="400">
 
 
-
+# Support
 
 If you're into this sort of thing, you might be interested in my podcast or the games I stream:
 
@@ -36,7 +83,7 @@ If you're into this sort of thing, you might be interested in my podcast or the 
 <a href="https://www.twitch.tv/kanjieater"><img src="https://i.imgur.com/sGLxgeo.png" title="twitch"  width="50" /></a>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-You can get support here: [Discord](https://discord.com/channels/541310018931392512/541310018931392515)
+You can get support here: [Discord](https://discord.com/invite/agbwB4p)
 
 If you find my tools useful please consider supporting via Patreon.
 
@@ -46,7 +93,7 @@ If you find my tools useful please consider supporting via Patreon.
 
 
 
-## Install
+# Install
 The apps current state requires both Windows and WSL.
 
 The app currently only supports being run from the source code, though I'm open to pull-requests to dockerize it or remove the windows dependency. All dependencies are WSL specific, but all paths are input as Windows paths for convenience.
@@ -69,7 +116,7 @@ Puppeteer is also an internal requirement for downloading cover images, so your 
 
 `sudo apt install -y libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxi-dev libxtst-dev libnss3 libcups2 libxss1 libxrandr2 libasound2 libatk1.0-0 libatk-bridge2.0-0 libpangocairo-1.0-0 libgtk-3-0 libgbm1`
 
-Customize your config file.
+Customize your config file. I highly recommend reading through the [#config] section and then downloading [my config](https://gist.github.com/kanjieater/e617a0f370edf25e0f947a25d67ba8ec), and adjust it as needed. This is the only part you should have to use your brain on ;).
 
 You can now run any of the commands below from WSL!
 
@@ -78,7 +125,8 @@ You can now run any of the commands below from WSL!
 - I recommend running the commands from `bash`, not `zsh`, as `zsh` can crash WSL when run for long periods with a lot of text output.
 - Make sure you have a backup of any archives you put in your queueFolders. I've run this with hundreds of archives now, so it does work well, but there could be bugs. I make no guarantees it will work well for you.
 
-## CLI Logging
+# Commands
+# CLI Logging
 You can use the `-v` command with any command to change the log level. Move v's is more verbose. I recommend running all commands with `-vv` to see `info` logging, so you can see how many succeeded and at what steps.
 
 Error's should always be logged.
@@ -140,7 +188,7 @@ Enhancement options are also valid.
 
 # Convert to Series
 ## Description
-Move CBZ's to Series folders and update their metadata. Your archives must already be valid CBZs.
+This is useful for when your archives have already been validated but you want to manually change a series title (maybe it downloaded the wrong one off Anilist). It moves CBZ's to Series folders and update their metadata based on local file and folder patterns. Your archives must already be valid CBZs.
 ### Option
 `--configFile`
 
@@ -163,6 +211,21 @@ Download Cover options are also valid.
 1. ☑ Rename the archive according to the metadata and configuration rules
 1. ☑ Download images for each volume and place in the series folder
 1. ☑ Update `ComicEater.json` and `ComicInfo.xml` with available metadata in the archive
+
+# Suggest Naming
+## Description
+This makes no changes to archives. This is useful for when you want to see what ComicEater would rename your archive to. Currently, it won't be able to predict how nested archives or volumes would be extracted.
+### Option
+`--configFile`
+
+`--convertToSeries`
+
+`--offline`
+
+Download Cover options are also valid.
+
+### Example
+`yarn main -vv --configFile 'W:\Collection\ComicEater.yml' --suggestNaming`
 
 # Download Covers
 ## Description
@@ -218,7 +281,7 @@ Trims white space using GraphicsMagick's trim option. It uses a fuzz factor of `
 ### Option
 `--splitPages`
 
-Cut's pages in half. If Trim White Space option is included, it will wait until after the trim is done.
+Cut's pages in half. If Trim White Space option is included, it will wait until after the trim is done. Assumes right to left currently. 
 
 # Setting Metadata
 ## Description
@@ -228,11 +291,11 @@ Inside the app there are 3 ways of thinking about metadata.
 1. metadata about the pipelines progress (Context: Internal runtime info of the pipelines "saga" work)
 Only the Archive metadata & Content metadata get persisted to the archive. Though pieces of the Context metadata may be embedded inside of History in order to allow for "rollbacks".
 
-# Config File
+# Config
 ## Descriptions
-Every time you run a command you give the app a config file. I personally use one for automated things that I run on a nightly automated task (like converting weekly subscription magazines automatically), and a second config file for manual runs.
+Every time you run a command you give the app a `.yml` config file. I personally use one for automated things that I run on a nightly automated task (like converting weekly subscription magazines automatically), and a second config file for manual runs.
 
-There's a lot here, so the easiest way to understand it is to read this, then spend less than 10 mins, trying to understand my real config here. If you have difficulty still you can ask for help on discord.
+There's a lot here, so the easiest way to understand it is to read this, then spend less than 10 mins, trying to understand my real config [here](https://gist.github.com/kanjieater/e617a0f370edf25e0f947a25d67ba8ec). If you have difficulty still you can ask for help on discord.
 
 ## Patterns
 The pattern matching uses the double curly brace syntax `{{metaDataVariableName}}` as a way to indicate where metadata is at.
