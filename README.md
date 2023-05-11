@@ -416,3 +416,8 @@ This is used when something goes wrong. All failed files are moved here.
 1. Webp
 1. Record File hash drift events
 1. Send API request to Komga
+2. Maintain metadata outside of the archive
+3. Set cover to second (n) page based on komga tag
+4. blur nsfw tag
+5. config to rename automatically 
+6. convert to typescript 
