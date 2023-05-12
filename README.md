@@ -420,4 +420,5 @@ This is used when something goes wrong. All failed files are moved here.
 3. Set cover to second (n) page based on komga tag
 4. blur nsfw tag
 5. config to rename automatically 
-6. convert to typescript 
+6. convert to typescript
+7. dockerify 
