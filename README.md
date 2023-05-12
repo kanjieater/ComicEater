@@ -11,7 +11,7 @@ Including the following:
 - Option to remove white space on margins
 - Option to split double pages into individual pages
 - Download metadata (from sources like AniList) for use in Komga (stored in a `ComicInfo.xml` )
-- Download covers for use Komga
+- Download covers for use in Komga
 - Converts all of your archives to the standard CBZ, comic book zip format
 - Rename and group files according to downloaded metadata
 - Split nested archives into individual archives
