@@ -422,3 +422,4 @@ This is used when something goes wrong. All failed files are moved here.
 5. config to rename automatically 
 6. convert to typescript
 7. dockerify 
+8. Signal to komga to update after modifying content
