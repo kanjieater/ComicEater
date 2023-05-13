@@ -29,12 +29,12 @@ Including the following:
 * [Support](#support)
 * [Install](#install)
 * [Commands](#commands)
-* [Maintain Collection](#maintain-collection) 
-* [Convert to Series](#convert-to-series) 
-* [Suggest Naming](#suggest-naming) 
-* [Download Covers](#download-covers) 
-* [Enhancement Options](#enhancement-options)  
-* [Config](#config) 
+* [Maintain Collection](#maintain-collection)
+* [Convert to Series](#convert-to-series)
+* [Suggest Naming](#suggest-naming)
+* [Download Covers](#download-covers)
+* [Enhancement Options](#enhancement-options)
+* [Config](#config)
 
 # Examples
 ## Upscale before and after:
@@ -281,7 +281,7 @@ Trims white space using GraphicsMagick's trim option. It uses a fuzz factor of `
 ### Option
 `--splitPages`
 
-Cut's pages in half. If Trim White Space option is included, it will wait until after the trim is done. Assumes right to left currently. 
+Cut's pages in half. If Trim White Space option is included, it will wait until after the trim is done. Assumes right to left currently.
 
 # Setting Metadata
 ## Description
@@ -404,7 +404,17 @@ This is used when something goes wrong. All failed files are moved here.
 1. ~~Split Double Images~~
 1. ~~Waifu2x~~
 
+8. Signal to komga to update after modifying content
+1. Move folders to prep before doing anything
+5. config to rename automatically
+1. Send API request to Komga
+6. convert to typescript
+3. Set cover to second (n) page based on komga tag
+4. blur nsfw tag
 1. Add tags
+2. Maintain metadata outside of the archive
+7. dockerify
+
 1. Get names from google organic search
 1. Undo naming / folder move
 1. Master Config Test. > x results
@@ -415,11 +425,3 @@ This is used when something goes wrong. All failed files are moved here.
 1. Interactive naming
 1. Webp
 1. Record File hash drift events
-1. Send API request to Komga
-2. Maintain metadata outside of the archive
-3. Set cover to second (n) page based on komga tag
-4. blur nsfw tag
-5. config to rename automatically 
-6. convert to typescript
-7. dockerify 
-8. Signal to komga to update after modifying content
