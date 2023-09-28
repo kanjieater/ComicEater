@@ -122,8 +122,8 @@ You can now run any of the commands below from WSL!
 
 ## Warning
 
-- I recommend running the commands from `bash`, not `zsh`, as `zsh` can crash WSL when run for long periods with a lot of text output.
-- Make sure you have a backup of any archives you put in your queueFolders. I've run this with hundreds of archives now, so it does work well, but there could be bugs. I make no guarantees it will work well for you.
+- ~~I recommend running the commands from `bash`, not `zsh`, as `zsh` can crash WSL when run for long periods with a lot of text output.~~ It is 2023 and I no longer believe this to be the case.
+- Make sure you have a backup of any archives you put in your queueFolders. I've run this with ~~hundreds~~ thousands of archives now, so it does work well, but there could be bugs. I make no guarantees it will work well for you.
 
 # Commands
 # CLI Logging
@@ -139,7 +139,6 @@ Error's should always be logged.
 
 # Maintain Collection
 ## Description
-This is meant to be run as a service and will rerun based on `scanCron` in seconds.
 It convert archives from the `seriesFolders`'s `queueFolders` to CBZ's. Then converts them to series and updates their metadata.
 ### Option
 `--configFile`
@@ -157,7 +156,7 @@ Enhancement options are also valid.
 
 
 ### Flow
-1. ☑ Get all archives at `queueFolders`
+1. ☑ Get all archives at `queueFolders` and move them to the `maintenanceFolders`
 1. ☑ Convert them to CBZ (See the `Convert to CBZ Flow`)
 1. ☑ Use `folderPatterns` to gather metadata from the folder about the files
 1. ☑ Use the `filePatterns` to gather data about the files
@@ -202,7 +201,7 @@ Download Cover options are also valid.
 `yarn main -vv --configFile 'W:\Collection\ComicEater.yml' --convertToSeries`
 
 ### Flow
-1. ☑ Get all archives at `queueFolders` path
+1. ☑ Get all archives at `queueFolders` path and move them to the `maintenanceFolders`
 1. ☐ Get any metadata available from the `ComicEater.json` file
 1. ☑ Infer each seriesRoot level archives series from file if no existing metadata
 1. ☑ Get metadata from remote sources
@@ -404,14 +403,14 @@ This is used when something goes wrong. All failed files are moved here.
 1. ~~Split Double Images~~
 1. ~~Waifu2x~~
 
-8. Signal to komga to update after modifying content
-1. Move folders to prep before doing anything
-5. config to rename automatically
-1. Send API request to Komga
+8. ~~ to komga to update after modifying content~~
+1. ~~Move folders to prep before doing anything~~
+5. ~~config to rename automatically~~
+1. ~~Send API request to Komga~~
 6. convert to typescript
-3. Set cover to second (n) page based on komga tag
-4. blur nsfw tag
-1. Add tags
+3. ~~Set cover to second (n) page based on komga tag~~
+4. ~~blur nsfw tag~~
+1. ~~Add tags: use komf~~
 2. Maintain metadata outside of the archive
 7. dockerify
 
@@ -424,4 +423,5 @@ This is used when something goes wrong. All failed files are moved here.
 1. Detect missing volumes/issues
 1. Interactive naming
 1. Webp
+1. Avif deconversion
 1. Record File hash drift events
