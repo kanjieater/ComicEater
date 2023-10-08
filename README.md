@@ -112,11 +112,18 @@ In the project root folder execute:
 
 `yarn`
 
+### Cover Image Fetching
 Puppeteer is also an internal requirement for downloading cover images, so your system may require additional dependencies. On Ubuntu 20.04 i had to install these:
 
 `sudo apt install -y libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxi-dev libxtst-dev libnss3 libcups2 libxss1 libxrandr2 libasound2 libatk1.0-0 libatk-bridge2.0-0 libpangocairo-1.0-0 libgtk-3-0 libgbm1`
 
-Customize your config file. I highly recommend reading through the [#config] section and then downloading [my config](https://gist.github.com/kanjieater/e617a0f370edf25e0f947a25d67ba8ec), and adjust it as needed. This is the only part you should have to use your brain on ;).
+### AVIF Support
+
+You need ImageMagick `convert --version | grep -i heic` to show `heic` in the delegates list. This was a pain to setup, but if you follow these instructions on a modern version of Ubuntu you might get it working too
+https://stackoverflow.com/a/66116056
+
+### Customize your config file
+I highly recommend reading through the [#config] section and then downloading [my config](https://gist.github.com/kanjieater/e617a0f370edf25e0f947a25d67ba8ec), and adjust it as needed. This is the only part you should have to use your brain on ;).
 
 You can now run any of the commands below from WSL!
 
