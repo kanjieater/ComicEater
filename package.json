@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "anilist-node": "^1.9.1",
-    "archiver": "^5.3.0",
     "axios": "^0.21.1",
     "deepmerge": "^4.2.2",
     "fast-glob": "^3.2.7",
