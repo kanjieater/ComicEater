@@ -10,7 +10,7 @@ Including the following:
 - Option to upscale comic books with machine learning to higher resolutions using waifu2x-ncnn-vulkan
 - Option to remove white space on margins
 - Option to split double pages into individual pages
-- Download metadata (from sources like AniList) for use in Komga (stored in a `ComicInfo.xml` )
+- Download metadata (from sources like AniList)
 - Download covers for use in Komga
 - Converts all of your archives to the standard CBZ, comic book zip format
 - Rename and group files according to downloaded metadata
@@ -22,7 +22,7 @@ Including the following:
 - Removes distributer bloat, like url file links to their site
 - Supports a Queue folder that can be used to automatically convert archives on a chron job
 - Moves failed conversions to a maintenance folder so you can manually fix and rerun any failed jobs
-- Records file history inside the archive as `ComicEater.json` to show what it was renamed from, split from, etc. and for future possibilities, like reverting changes
+<!-- - Records file history inside the archive as `ComicEater.json` to show what it was renamed from, split from, etc. and for future possibilities, like reverting changes -->
 
 # Table of Contents
 
@@ -169,8 +169,7 @@ Enhancement options are also valid.
 1. ☑ Use the `filePatterns` to gather data about the files
 1. ☑ Search remote sources for any additional metadata
 1. ☑ Download Covers
-1. ☑ Rename the archive according to the metadata and `comic.json`'s `outputNamingConventions`
-1. ☑ Update `ComicEater.json` and `ComicInfo.xml` with available metadata in the archive
+
 
 #### Convert to CBZ Flow
 1. ☑ Get all archives from the path (if `maintainCollection`, this will be your queueFolders)
@@ -189,7 +188,6 @@ Enhancement options are also valid.
 1. ☑ Repack images
 1. ☑ If nested archives exist, flatten all nested archives in place of the original
 1. ☑ If there were no errors, remove the extracted working directory
-1. ☑ Update `ComicEater.json` with available metadata (history) in the archive
 
 
 # Convert to Series
@@ -209,14 +207,12 @@ Download Cover options are also valid.
 
 ### Flow
 1. ☑ Get all archives at `queueFolders` path and move them to the `maintenanceFolders`
-1. ☐ Get any metadata available from the `ComicEater.json` file
 1. ☑ Infer each seriesRoot level archives series from file if no existing metadata
 1. ☑ Get metadata from remote sources
 1. ☑ Name the series according to the available metadata
 1. ☑ Put archives in their seriesRoot series folder according to the config
 1. ☑ Rename the archive according to the metadata and configuration rules
 1. ☑ Download images for each volume and place in the series folder
-1. ☑ Update `ComicEater.json` and `ComicInfo.xml` with available metadata in the archive
 
 # Suggest Naming
 ## Description
@@ -291,11 +287,13 @@ Cut's pages in half. If Trim White Space option is included, it will wait until 
 
 # Setting Metadata
 ## Description
+Meta data is no longer persisted to the archives. Instead use something more flexible like SND's KOMF.
+
 Inside the app there are 3 ways of thinking about metadata.
 1. metadata about the archive itself (History)
 1. metadata about the content (Series, Volume, etc.)
 1. metadata about the pipelines progress (Context: Internal runtime info of the pipelines "saga" work)
-Only the Archive metadata & Content metadata get persisted to the archive. Though pieces of the Context metadata may be embedded inside of History in order to allow for "rollbacks".
+<!-- Only the Archive metadata & Content metadata get persisted to the archive. Though pieces of the Context metadata may be embedded inside of History in order to allow for "rollbacks". -->
 
 # Config
 ## Descriptions
