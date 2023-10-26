@@ -119,8 +119,11 @@ Puppeteer is also an internal requirement for downloading cover images, so your 
 
 ### AVIF Support
 
-You need ImageMagick `convert --version | grep -i heic` to show `heic` in the delegates list. This was a pain to setup, but if you follow these instructions on a modern version of Ubuntu you might get it working too
+You need ImageMagick `convert --version | grep -i heic` to show `heic` in the delegates list. This was a pain to setup, but if you follow these instructions on a modern version of Ubuntu you might get it working too. 
 https://stackoverflow.com/a/66116056
+
+In addition if you want WEBP support, you might have to run 
+`sudo apt install build-essential pkg-config webp libwebp-dev libwebp7` before the commands listed in that stackoverflow post. `convert --version` has to have your image formats listed, including webp if you want to be able to use webp files in your comics.
 
 ### Customize your config file
 I highly recommend reading through the [#config] section and then downloading [my config](https://gist.github.com/kanjieater/e617a0f370edf25e0f947a25d67ba8ec), and adjust it as needed. This is the only part you should have to use your brain on ;).
@@ -427,6 +430,6 @@ This is used when something goes wrong. All failed files are moved here.
 1. Get a new cover image based on existing dimension / reverse image lookup
 1. Detect missing volumes/issues
 1. Interactive naming
-1. Webp
-1. Avif deconversion
+1. ~~Webp~~
+1. ~~Avif deconversion~~
 1. Record File hash drift events
