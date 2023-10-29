@@ -125,6 +125,8 @@ https://stackoverflow.com/a/66116056
 In addition if you want WEBP support, you might have to run 
 `sudo apt install build-essential pkg-config webp libwebp-dev libwebp7` before the commands listed in that stackoverflow post. `convert --version` has to have your image formats listed, including webp if you want to be able to use webp files in your comics.
 
+If you're building imagemagick from source you also have to install these other libraries to get jpg working 🫠
+https://gist.github.com/nickferrando/fb0a44d707c8c3efd92dedd0f79d2911
 ### Customize your config file
 I highly recommend reading through the [#config] section and then downloading [my config](https://gist.github.com/kanjieater/e617a0f370edf25e0f947a25d67ba8ec), and adjust it as needed. This is the only part you should have to use your brain on ;).
 
