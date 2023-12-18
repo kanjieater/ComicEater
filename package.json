@@ -23,6 +23,7 @@
     "js2xmlparser": "^4.0.1",
     "just-clone": "^3.2.1",
     "just-diff": "^3.1.1",
+    "natural-compare-lite": "^1.4.0",
     "p-limit": "^3.1.0",
     "proper-lockfile": "^4.1.2",
     "rimraf": "^5.0.5",
