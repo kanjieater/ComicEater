@@ -19,7 +19,7 @@
     "fs-extra": "^10.0.0",
     "gm": "^1.23.1",
     "googlethis": "^1.1.6",
-    "images-scraper": "^6.4.5",
+    "images-scraper": "^6.4.6",
     "js-yaml": "^4.1.0",
     "js2xmlparser": "^4.0.1",
     "just-clone": "^3.2.1",

@@ -1,0 +1,17 @@
+services:
+  comiceater:
+    # Run from source
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: comiceater
+    volumes:
+      # - /lockfile:/lockfile # Required to be shared local folder to avoid raceconditions if multiple programs can launch ComicEater
+      - /mnt/w/collection:/mnt/w/collection/
+      - /mnt/g/queue:/mnt/g/queue/
+    env_file: ".env"
+    environment:
+      - PUID=1000
+      - PGID=1000
+    command: ["yarn", "main", "-vv", "--configFile", "/mnt/w/collection/ComicEater.yml", "--maintainCollection"]
+    # command: ["yarn", "main", "-vvv", "--configFile", "/mnt/w/collection/ComicEater.yml", "--getCovers", "--downloadCover", "/mnt/w/collection/シリーズ/イサック", "--coverQuery", "site:bookmeter.com イサック", "--noCoverValidate"]

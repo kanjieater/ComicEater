@@ -1906,7 +1906,7 @@ __metadata:
     fs-extra: "npm:^10.0.0"
     gm: "npm:^1.23.1"
     googlethis: "npm:^1.1.6"
-    images-scraper: "npm:^6.4.5"
+    images-scraper: "npm:^6.4.6"
     jest: "npm:^27.0.6"
     js-yaml: "npm:^4.1.0"
     js2xmlparser: "npm:^4.0.1"
@@ -3457,7 +3457,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"images-scraper@npm:^6.4.5":
+"images-scraper@npm:^6.4.6":
   version: 6.4.6
   resolution: "images-scraper@npm:6.4.6"
   dependencies:
