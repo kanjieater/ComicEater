@@ -13,5 +13,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
+      - /etc/timezone:/etc/timezone:ro # TODO: potentially allow for env var
+
     command: ["yarn", "main", "-vv", "--configFile", "/mnt/w/collection/ComicEater.yml", "--maintainCollection"]
     # command: ["yarn", "main", "-vvv", "--configFile", "/mnt/w/collection/ComicEater.yml", "--getCovers", "--downloadCover", "/mnt/w/collection/シリーズ/イサック", "--coverQuery", "site:bookmeter.com イサック", "--noCoverValidate"]
